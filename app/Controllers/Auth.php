@@ -2,7 +2,7 @@
 
 class Auth extends BaseController
 {
-	public function loginForm()
+	public function index()
 	{
 		return view('auths/login');
 	}
@@ -12,6 +12,10 @@ class Auth extends BaseController
 		return view('auths/register');
 	}
 
+	public function pizzasList()
+	{
+		return view('index');
+	}
 	//--------------------------------------------------------------------
 
 }

@@ -16,7 +16,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Auth');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -31,31 +31,13 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-$routes->group('teacher', function($routes)
-{
-	$routes->add('/', 'Teacher::index');
-	$routes->add('touaght', 'Teacher::teaching');
-	$routes->add('subject/(:any)','Teacher::manageSubject/$1');
-});
+	$routes->add('/','Auth::index');
+	$routes->match(['get','post'],'signup','Auth::registerForm');
+	$routes->add('pizza','Auth::pizzasList');
+	$routes->add('signin','Auth::pizzasList');
 
-$routes->group('student', function($routes)
-{
-	$routes->add('/','Student::index');
-	$routes->add('learnt','Student::learning');
-	$routes->add('playsport', 'Student::playSport');
-	$routes->add('read/(:any)/(:alpha)','Student::reading/$1/$2');
-});
+// $routes->add('/','Home::index');
 
-$routes->group('/', function($routes)
-{
-	$routes->add('login','Auth::loginForm');
-	$routes->add('register','Auth::registerForm');
-	
-});
-
-$routes->add('/','Home::index');
-
-// 
 
 
 

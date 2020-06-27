@@ -5,7 +5,7 @@
     
   </div>
   <div class="auth__body">
-    <form class="auth__form" autocomplete="off" action="/signin" method="post">
+    <form class="auth__form" autocomplete="off" action="/pizza" method="post">
       <div class="auth__form_body">
         <h3 class="auth__form_title">
         <img src="images/logo.svg" alt="" width="50">
@@ -36,7 +36,7 @@
           NEXT
         </button>
         <div class="mt-2">
-          <a href="/signin" class="small text-uppercase">
+          <a href="/" class="small text-uppercase">
             SIGN IN INSTEAD
           </a>
         </div>

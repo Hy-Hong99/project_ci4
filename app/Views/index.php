@@ -75,7 +75,7 @@
         
         <!-- Modal body -->
         <div class="modal-body text-right">
-			<form  action="/" method="post">
+			<form  action="/pizza" method="post">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Pizza name">
 				</div>
@@ -109,7 +109,7 @@
         
         <!-- Modal body -->
         <div class="modal-body text-right">
-			<form  action="/" method="post">
+			<form  action="/pizza" method="post">
 				<div class="form-group">
 					<input type="text" class="form-control" value="Rady Pizza">
 				</div>
