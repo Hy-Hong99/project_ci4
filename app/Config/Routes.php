@@ -16,7 +16,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Auth');
+$routes->setDefaultController('User');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -31,16 +31,10 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-	$routes->add('/','Auth::index');
-	$routes->match(['get','post'],'signup','Auth::registerForm');
-	$routes->add('pizza','Auth::pizzasList');
-	$routes->add('signin','Auth::pizzasList');
-
-// $routes->add('/','Home::index');
-
-
-
-
+$routes->add('/pizza', 'Pizza::listPizza');
+$routes->add('signin', 'User::loginForm');
+$routes->add('/', 'User::loginForm');
+$routes->add('register', 'User::register');
 
 /**
  * --------------------------------------------------------------------
